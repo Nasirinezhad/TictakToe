@@ -1,0 +1,395 @@
+Analysis & Synthesis report for Dooz
+Sat Dec 14 11:49:52 2019
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |Dooz|key:bl|scan_key
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "key:bl"
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++-----------------------------+----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Dec 14 11:49:52 2019        ;
+; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name               ; Dooz                                         ;
+; Top-level Entity Name       ; Dooz                                         ;
+; Family                      ; MAX II                                       ;
+; Total logic elements        ; 236                                          ;
+; Total pins                  ; 37                                           ;
+; Total virtual pins          ; 0                                            ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
++-----------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EPM240T100C5       ;                    ;
+; Top-level entity name                                        ; Dooz               ; Dooz               ;
+; Family name                                                  ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                           ;
++----------------------------------+-----------------+------------------------------+------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path ;
++----------------------------------+-----------------+------------------------------+------------------------------+
+; Dooz.v                           ; yes             ; User Verilog HDL File        ; J:/fpga/dooz/Dooz.v          ;
+; key.v                            ; yes             ; User Verilog HDL File        ; J:/fpga/dooz/key.v           ;
+; ControlUnit2.v                   ; yes             ; Auto-Found Verilog HDL File  ; J:/fpga/dooz/ControlUnit2.v  ;
+; dotmat.v                         ; yes             ; Auto-Found Verilog HDL File  ; J:/fpga/dooz/dotmat.v        ;
++----------------------------------+-----------------+------------------------------+------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 236   ;
+;     -- Combinational with no register       ; 122   ;
+;     -- Register only                        ; 26    ;
+;     -- Combinational with a register        ; 88    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 105   ;
+;     -- 3 input functions                    ; 37    ;
+;     -- 2 input functions                    ; 46    ;
+;     -- 1 input functions                    ; 22    ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 203   ;
+;     -- arithmetic mode                      ; 33    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 36    ;
+;                                             ;       ;
+; Total registers                             ; 114   ;
+; Total logic cells in carry chains           ; 36    ;
+; I/O pins                                    ; 37    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 100   ;
+; Total fan-out                               ; 911   ;
+; Average fan-out                             ; 3.34  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name           ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------+--------------+
+; |Dooz                      ; 236 (0)     ; 114          ; 0          ; 37   ; 0            ; 122 (0)      ; 26 (0)            ; 88 (0)           ; 36 (0)          ; 0 (0)      ; |Dooz                         ; work         ;
+;    |ControlUnit2:cu|       ; 106 (106)   ; 42           ; 0          ; 0    ; 0            ; 64 (64)      ; 24 (24)           ; 18 (18)          ; 0 (0)           ; 0 (0)      ; |Dooz|ControlUnit2:cu         ; work         ;
+;    |dotmat:blok|           ; 64 (56)     ; 36           ; 0          ; 0    ; 0            ; 28 (20)      ; 0 (0)             ; 36 (36)          ; 21 (21)         ; 0 (0)      ; |Dooz|dotmat:blok             ; work         ;
+;       |dec38:b_row|        ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Dooz|dotmat:blok|dec38:b_row ; work         ;
+;    |key:bl|                ; 66 (66)     ; 36           ; 0          ; 0    ; 0            ; 30 (30)      ; 2 (2)             ; 34 (34)          ; 15 (15)         ; 0 (0)      ; |Dooz|key:bl                  ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Dooz|key:bl|scan_key                                                                                                                                                                                                                                                                           ;
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+; Name           ; scan_key.00000 ; scan_key.01111 ; scan_key.01110 ; scan_key.01101 ; scan_key.01100 ; scan_key.01011 ; scan_key.01010 ; scan_key.01001 ; scan_key.01000 ; scan_key.00111 ; scan_key.00110 ; scan_key.00101 ; scan_key.00100 ; scan_key.00011 ; scan_key.00010 ; scan_key.00001 ; scan_key.10000 ;
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+; scan_key.10000 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ;
+; scan_key.00001 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1              ;
+; scan_key.00010 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1              ;
+; scan_key.00011 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1              ;
+; scan_key.00100 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.00101 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.00110 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.00111 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.01000 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.01001 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.01010 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.01011 ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.01100 ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.01101 ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.01110 ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.01111 ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; scan_key.00000 ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
++------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                           ;
++----------------------------------------+-------------------------------------+
+; Register name                          ; Reason for Removal                  ;
++----------------------------------------+-------------------------------------+
+; ControlUnit2:cu|mat[2]                 ; Merged with ControlUnit2:cu|mat[11] ;
+; ControlUnit2:cu|mat[3]                 ; Merged with ControlUnit2:cu|mat[10] ;
+; ControlUnit2:cu|mat[0]                 ; Merged with ControlUnit2:cu|mat[9]  ;
+; ControlUnit2:cu|mat[1]                 ; Merged with ControlUnit2:cu|mat[8]  ;
+; ControlUnit2:cu|mat[14]                ; Merged with ControlUnit2:cu|mat[7]  ;
+; ControlUnit2:cu|mat[15]                ; Merged with ControlUnit2:cu|mat[6]  ;
+; ControlUnit2:cu|mat[12]                ; Merged with ControlUnit2:cu|mat[5]  ;
+; ControlUnit2:cu|mat[13]                ; Merged with ControlUnit2:cu|mat[4]  ;
+; ControlUnit2:cu|mat[25]                ; Merged with ControlUnit2:cu|mat[16] ;
+; ControlUnit2:cu|mat[24]                ; Merged with ControlUnit2:cu|mat[17] ;
+; ControlUnit2:cu|mat[27]                ; Merged with ControlUnit2:cu|mat[18] ;
+; ControlUnit2:cu|mat[26]                ; Merged with ControlUnit2:cu|mat[19] ;
+; ControlUnit2:cu|mat[29]                ; Merged with ControlUnit2:cu|mat[20] ;
+; ControlUnit2:cu|mat[28]                ; Merged with ControlUnit2:cu|mat[21] ;
+; ControlUnit2:cu|mat[31]                ; Merged with ControlUnit2:cu|mat[22] ;
+; ControlUnit2:cu|mat[30]                ; Merged with ControlUnit2:cu|mat[23] ;
+; ControlUnit2:cu|mat[41]                ; Merged with ControlUnit2:cu|mat[32] ;
+; ControlUnit2:cu|mat[40]                ; Merged with ControlUnit2:cu|mat[33] ;
+; ControlUnit2:cu|mat[43]                ; Merged with ControlUnit2:cu|mat[34] ;
+; ControlUnit2:cu|mat[42]                ; Merged with ControlUnit2:cu|mat[35] ;
+; ControlUnit2:cu|mat[45]                ; Merged with ControlUnit2:cu|mat[36] ;
+; ControlUnit2:cu|mat[44]                ; Merged with ControlUnit2:cu|mat[37] ;
+; ControlUnit2:cu|mat[47]                ; Merged with ControlUnit2:cu|mat[38] ;
+; ControlUnit2:cu|mat[46]                ; Merged with ControlUnit2:cu|mat[39] ;
+; ControlUnit2:cu|mat[57]                ; Merged with ControlUnit2:cu|mat[48] ;
+; ControlUnit2:cu|mat[56]                ; Merged with ControlUnit2:cu|mat[49] ;
+; ControlUnit2:cu|mat[59]                ; Merged with ControlUnit2:cu|mat[50] ;
+; ControlUnit2:cu|mat[58]                ; Merged with ControlUnit2:cu|mat[51] ;
+; ControlUnit2:cu|mat[61]                ; Merged with ControlUnit2:cu|mat[52] ;
+; ControlUnit2:cu|mat[60]                ; Merged with ControlUnit2:cu|mat[53] ;
+; ControlUnit2:cu|mat[63]                ; Merged with ControlUnit2:cu|mat[54] ;
+; ControlUnit2:cu|mat[62]                ; Merged with ControlUnit2:cu|mat[55] ;
+; key:bl|scan_key~27                     ; Lost fanout                         ;
+; key:bl|scan_key~28                     ; Lost fanout                         ;
+; key:bl|scan_key~29                     ; Lost fanout                         ;
+; key:bl|scan_key~30                     ; Lost fanout                         ;
+; key:bl|scan_key.01000                  ; Lost fanout                         ;
+; Total Number of Removed Registers = 37 ;                                     ;
++----------------------------------------+-------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 114   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 36    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 60    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; key:bl|row[1]                           ; 11      ;
+; key:bl|row[2]                           ; 10      ;
+; key:bl|row[3]                           ; 11      ;
+; ControlUnit2:cu|mat[34]                 ; 4       ;
+; ControlUnit2:cu|mat[36]                 ; 4       ;
+; ControlUnit2:cu|mat[38]                 ; 3       ;
+; ControlUnit2:cu|mat[32]                 ; 3       ;
+; ControlUnit2:cu|mat[20]                 ; 4       ;
+; ControlUnit2:cu|mat[18]                 ; 4       ;
+; ControlUnit2:cu|mat[22]                 ; 3       ;
+; ControlUnit2:cu|mat[16]                 ; 3       ;
+; ControlUnit2:cu|mat[6]                  ; 4       ;
+; ControlUnit2:cu|mat[48]                 ; 4       ;
+; ControlUnit2:cu|mat[9]                  ; 4       ;
+; ControlUnit2:cu|mat[54]                 ; 4       ;
+; ControlUnit2:cu|mat[4]                  ; 3       ;
+; ControlUnit2:cu|mat[52]                 ; 3       ;
+; ControlUnit2:cu|mat[50]                 ; 3       ;
+; ControlUnit2:cu|mat[11]                 ; 3       ;
+; ControlUnit2:cu|mat[35]                 ; 4       ;
+; ControlUnit2:cu|mat[37]                 ; 4       ;
+; ControlUnit2:cu|mat[39]                 ; 3       ;
+; ControlUnit2:cu|mat[33]                 ; 3       ;
+; ControlUnit2:cu|mat[21]                 ; 4       ;
+; ControlUnit2:cu|mat[19]                 ; 4       ;
+; ControlUnit2:cu|mat[23]                 ; 3       ;
+; ControlUnit2:cu|mat[17]                 ; 3       ;
+; ControlUnit2:cu|mat[7]                  ; 4       ;
+; ControlUnit2:cu|mat[49]                 ; 4       ;
+; ControlUnit2:cu|mat[8]                  ; 4       ;
+; ControlUnit2:cu|mat[55]                 ; 4       ;
+; ControlUnit2:cu|mat[5]                  ; 3       ;
+; ControlUnit2:cu|mat[53]                 ; 3       ;
+; ControlUnit2:cu|mat[51]                 ; 3       ;
+; ControlUnit2:cu|mat[10]                 ; 3       ;
+; dotmat:blok|beep                        ; 2       ;
+; ControlUnit2:cu|beep                    ; 2       ;
+; Total number of inverted registers = 37 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Dooz|dotmat:blok|Mux1     ;
+; 30:1               ; 4 bits    ; 80 LEs        ; 24 LEs               ; 56 LEs                 ; No         ; |Dooz|key:bl|Mux31         ;
+; 30:1               ; 4 bits    ; 80 LEs        ; 24 LEs               ; 56 LEs                 ; No         ; |Dooz|key:bl|Mux19         ;
+; 30:1               ; 4 bits    ; 80 LEs        ; 24 LEs               ; 56 LEs                 ; No         ; |Dooz|key:bl|Mux23         ;
+; 30:1               ; 4 bits    ; 80 LEs        ; 24 LEs               ; 56 LEs                 ; No         ; |Dooz|key:bl|Mux27         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "key:bl"                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; en   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sat Dec 14 11:49:49 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Dooz -c Dooz
+Info: Found 1 design units, including 1 entities, in source file Dooz.v
+    Info: Found entity 1: Dooz
+Info: Found 1 design units, including 1 entities, in source file key.v
+    Info: Found entity 1: key
+Info: Found 0 design units, including 0 entities, in source file ControlUnit.v
+Info: Elaborating entity "Dooz" for the top level hierarchy
+Info: Elaborating entity "key" for hierarchy "key:bl"
+Warning (10230): Verilog HDL assignment warning at key.v(23): truncated value with size 32 to match size of target (16)
+Warning: Using design file ControlUnit2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: ControlUnit2
+Info: Elaborating entity "ControlUnit2" for hierarchy "ControlUnit2:cu"
+Warning: Entity "dec38" obtained from "J:/fpga/dooz/dotmat.v" instead of from Quartus II megafunction library
+Warning: Using design file dotmat.v, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info: Found entity 1: dec38
+    Info: Found entity 2: dotmat
+Info: Elaborating entity "dotmat" for hierarchy "dotmat:blok"
+Warning (10230): Verilog HDL assignment warning at dotmat.v(38): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at dotmat.v(60): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at dotmat.v(62): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at dotmat.v(64): truncated value with size 32 to match size of target (1)
+Info: Elaborating entity "dec38" for hierarchy "dotmat:blok|dec38:b_row"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sp[0]" is stuck at GND
+Info: Registers with preset signals will power-up high
+Info: 5 registers lost all their fanouts during netlist optimizations. The first 5 are displayed below.
+    Info: Register "key:bl|scan_key~27" lost all its fanouts during netlist optimizations.
+    Info: Register "key:bl|scan_key~28" lost all its fanouts during netlist optimizations.
+    Info: Register "key:bl|scan_key~29" lost all its fanouts during netlist optimizations.
+    Info: Register "key:bl|scan_key~30" lost all its fanouts during netlist optimizations.
+    Info: Register "key:bl|scan_key.01000" lost all its fanouts during netlist optimizations.
+Info: Implemented 273 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 31 output pins
+    Info: Implemented 236 logic cells
+Info: Generated suppressed messages file J:/fpga/dooz/Dooz.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 215 megabytes
+    Info: Processing ended: Sat Dec 14 11:49:52 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in J:/fpga/dooz/Dooz.map.smsg.
+
+

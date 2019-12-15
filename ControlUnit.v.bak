@@ -1,0 +1,142 @@
+module ControlUnit(clk, keyboard, rst, mat);
+input clk, rst;
+input [7:0] keyboard;
+
+output [63:0] mat;
+reg [63:0] mat;
+initial mat = 64'b1111111111111111111111111111111111111111111111111111111111111111;
+
+reg sw_player;
+initial sw_player = 0;
+
+reg [7:0] keyboard2;
+initial keyboard2 = 0;
+
+always @ (posedge clk)
+	begin
+		if(keyboard2 != keyboard)
+			begin
+				sw_player <= ~sw_player;
+				keyboard2 <= keyboard;
+			end
+	end
+
+always @ (posedge clk)
+begin
+	case (keyboard)
+	8'b11000000:
+	begin
+		mat[0] <= sw_player;
+		mat[1] <= ~sw_player;
+		mat[8] <= ~sw_player;
+		mat[9] <= sw_player;
+		
+	end
+	8'b11111001:
+	begin
+		mat[2] <= sw_player;
+		mat[3] <= ~sw_player;
+		mat[10] <= ~sw_player;
+		mat[11] <= sw_player;
+	end
+	8'b10100100:
+	begin
+		mat[4] <= sw_player;
+		mat[5] <= ~sw_player;
+		mat[12] <= ~sw_player;
+		mat[13] <= sw_player;
+	end
+	8'b10110000:
+	begin
+		mat[6] <= sw_player;
+		mat[7] <= ~sw_player;
+		mat[14] <= ~sw_player;
+		mat[15] <= sw_player;
+	end
+	8'b10011001:
+	begin
+		mat[16] <= sw_player;
+		mat[17] <= ~sw_player;
+		mat[24] <= ~sw_player;
+		mat[25] <= sw_player;
+	end
+	8'b10010010:
+	begin
+		mat[18] <= sw_player;
+		mat[19] <= ~sw_player;
+		mat[26] <= ~sw_player;
+		mat[27] <= sw_player;
+	end
+	8'b10000010:
+	begin
+		mat[20] <= sw_player;
+		mat[21] <= ~sw_player;
+		mat[28] <= ~sw_player;
+		mat[29] <= sw_player;
+	end
+	8'b11111000:
+	begin
+		mat[22] <= sw_player;
+		mat[23] <= ~sw_player;
+		mat[30] <= ~sw_player;
+		mat[31] <= sw_player;
+	end
+	8'b10000000:
+	begin
+		mat[32] <= sw_player;
+		mat[33] <= ~sw_player;
+		mat[40] <= ~sw_player;
+		mat[41] <= sw_player;
+	end
+	8'b10010000:
+	begin
+		mat[34] <= sw_player;
+		mat[35] <= ~sw_player;
+		mat[42] <= ~sw_player;
+		mat[43] <= sw_player;
+	end
+	8'b10001000:
+	begin
+		mat[36] <= sw_player;
+		mat[37] <= ~sw_player;
+		mat[44] <= ~sw_player;
+		mat[45] <= sw_player;
+	end
+	8'b10000011:
+	begin
+		mat[38] <= sw_player;
+		mat[39] <= ~sw_player;
+		mat[46] <= ~sw_player;
+		mat[47] <= sw_player;
+	end
+	8'b11000110:
+	begin
+		mat[48] <= sw_player;
+		mat[49] <= ~sw_player;
+		mat[56] <= ~sw_player;
+		mat[57] <= sw_player;
+	end
+	8'b10100001:
+	begin
+		mat[50] <= sw_player;
+		mat[51] <= ~sw_player;
+		mat[58] <= ~sw_player;
+		mat[59] <= sw_player;
+	end
+	8'b10000110:
+	begin
+		mat[52] <= sw_player;
+		mat[53] <= ~sw_player;
+		mat[60] <= ~sw_player;
+		mat[61] <= sw_player;
+	end
+	8'b10001110:
+	begin
+		mat[54] <= sw_player;
+		mat[55] <= ~sw_player;
+		mat[62] <= ~sw_player;
+		mat[63] <= sw_player;
+	end
+	endcase
+end
+endmodule
